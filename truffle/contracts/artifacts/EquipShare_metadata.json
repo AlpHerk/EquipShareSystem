@@ -1,0 +1,2423 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "spender",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "value",
+						"type": "uint256"
+					}
+				],
+				"name": "Approval",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "value",
+						"type": "uint256"
+					}
+				],
+				"name": "Transfer",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "tips",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "equipmentId",
+						"type": "uint256"
+					}
+				],
+				"name": "eventAddEquipment",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "tips",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "userId",
+						"type": "uint256"
+					}
+				],
+				"name": "eventAddUser",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "tips",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "leaseId",
+						"type": "uint256"
+					}
+				],
+				"name": "eventApproveLease",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "tips",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "leaseId",
+						"type": "uint256"
+					}
+				],
+				"name": "eventCancelLease",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "tips",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "leaseId",
+						"type": "uint256"
+					}
+				],
+				"name": "eventCompleteLease",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "tips",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "leaseId",
+						"type": "uint256"
+					}
+				],
+				"name": "eventCreateLease",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "tips",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "equipmentId",
+						"type": "uint256"
+					}
+				],
+				"name": "eventFreezeEquipment",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "tips",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "equipmentId",
+						"type": "uint256"
+					}
+				],
+				"name": "eventMaintainEquipment",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "tips",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "leaseId",
+						"type": "uint256"
+					}
+				],
+				"name": "eventProposeLease",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "tips",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "leaseId",
+						"type": "uint256"
+					}
+				],
+				"name": "eventRejectLease",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "tips",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "equipmentId",
+						"type": "uint256"
+					}
+				],
+				"name": "eventRentEquipment",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "tips",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "equipmentId",
+						"type": "uint256"
+					}
+				],
+				"name": "eventReturnEquipment",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "tips",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "equipmentId",
+						"type": "uint256"
+					}
+				],
+				"name": "eventUnFreezeEquipment",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "tips",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "equipmentId",
+						"type": "uint256"
+					}
+				],
+				"name": "eventUnMaintainEquipment",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "tips",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "equipmentId",
+						"type": "uint256"
+					}
+				],
+				"name": "eventUpdateEquipment",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "tips",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "userId",
+						"type": "uint256"
+					}
+				],
+				"name": "eventUpdateUser",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "addrs",
+						"type": "address"
+					}
+				],
+				"name": "addAdmin",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "addres",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "category",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "descLink",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "imagesLink",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "deposit",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "unitPrice",
+						"type": "uint256"
+					}
+				],
+				"name": "addEquipment",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "category",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "descLink",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "imagesLink",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "deposit",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "unitPrice",
+						"type": "uint256"
+					}
+				],
+				"name": "addEquipment",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "addrs",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "avatar",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "email",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "tellphone",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "organization",
+						"type": "string"
+					}
+				],
+				"name": "addUser",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "avatar",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "email",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "tellphone",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "organization",
+						"type": "string"
+					}
+				],
+				"name": "addUser",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "balanceOf",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "leaseId",
+						"type": "uint256"
+					}
+				],
+				"name": "deleteLeasePactOwned",
+				"outputs": [],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "leaseId",
+						"type": "uint256"
+					}
+				],
+				"name": "deleteLeasePactRented",
+				"outputs": [],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "equipmentId",
+						"type": "uint256"
+					}
+				],
+				"name": "endMaintainEquipment",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "equipmentId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "startTime",
+						"type": "uint256"
+					}
+				],
+				"name": "freezeEquipment",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "equipmentId",
+						"type": "uint256"
+					}
+				],
+				"name": "freezeEquipment",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "equipmentId",
+						"type": "uint256"
+					}
+				],
+				"name": "getEquipment",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "id",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "owner",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "createdTime",
+								"type": "uint256"
+							},
+							{
+								"internalType": "bool",
+								"name": "isFrozen",
+								"type": "bool"
+							},
+							{
+								"internalType": "string",
+								"name": "name",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "category",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "descLink",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "imagesLink",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "unitPrice",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "deposit",
+								"type": "uint256"
+							},
+							{
+								"components": [
+									{
+										"internalType": "uint256",
+										"name": "lent",
+										"type": "uint256"
+									},
+									{
+										"internalType": "uint256",
+										"name": "maintain",
+										"type": "uint256"
+									},
+									{
+										"internalType": "uint256",
+										"name": "frozen",
+										"type": "uint256"
+									}
+								],
+								"internalType": "struct UseCnt",
+								"name": "useCnt",
+								"type": "tuple"
+							},
+							{
+								"components": [
+									{
+										"internalType": "uint256",
+										"name": "id",
+										"type": "uint256"
+									},
+									{
+										"internalType": "uint256",
+										"name": "startTime",
+										"type": "uint256"
+									},
+									{
+										"internalType": "uint256",
+										"name": "endTime",
+										"type": "uint256"
+									},
+									{
+										"internalType": "address",
+										"name": "occupier",
+										"type": "address"
+									},
+									{
+										"internalType": "enum OccupyType",
+										"name": "occupyType",
+										"type": "uint8"
+									}
+								],
+								"internalType": "struct OccupyPeriod[]",
+								"name": "occupyPeriod",
+								"type": "tuple[]"
+							}
+						],
+						"internalType": "struct Equipment",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getEquipmentAll",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "id",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "owner",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "createdTime",
+								"type": "uint256"
+							},
+							{
+								"internalType": "bool",
+								"name": "isFrozen",
+								"type": "bool"
+							},
+							{
+								"internalType": "string",
+								"name": "name",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "category",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "descLink",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "imagesLink",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "unitPrice",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "deposit",
+								"type": "uint256"
+							},
+							{
+								"components": [
+									{
+										"internalType": "uint256",
+										"name": "lent",
+										"type": "uint256"
+									},
+									{
+										"internalType": "uint256",
+										"name": "maintain",
+										"type": "uint256"
+									},
+									{
+										"internalType": "uint256",
+										"name": "frozen",
+										"type": "uint256"
+									}
+								],
+								"internalType": "struct UseCnt",
+								"name": "useCnt",
+								"type": "tuple"
+							},
+							{
+								"components": [
+									{
+										"internalType": "uint256",
+										"name": "id",
+										"type": "uint256"
+									},
+									{
+										"internalType": "uint256",
+										"name": "startTime",
+										"type": "uint256"
+									},
+									{
+										"internalType": "uint256",
+										"name": "endTime",
+										"type": "uint256"
+									},
+									{
+										"internalType": "address",
+										"name": "occupier",
+										"type": "address"
+									},
+									{
+										"internalType": "enum OccupyType",
+										"name": "occupyType",
+										"type": "uint8"
+									}
+								],
+								"internalType": "struct OccupyPeriod[]",
+								"name": "occupyPeriod",
+								"type": "tuple[]"
+							}
+						],
+						"internalType": "struct Equipment[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "addr",
+						"type": "address"
+					}
+				],
+				"name": "getEquipmentOwned",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "id",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "owner",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "createdTime",
+								"type": "uint256"
+							},
+							{
+								"internalType": "bool",
+								"name": "isFrozen",
+								"type": "bool"
+							},
+							{
+								"internalType": "string",
+								"name": "name",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "category",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "descLink",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "imagesLink",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "unitPrice",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "deposit",
+								"type": "uint256"
+							},
+							{
+								"components": [
+									{
+										"internalType": "uint256",
+										"name": "lent",
+										"type": "uint256"
+									},
+									{
+										"internalType": "uint256",
+										"name": "maintain",
+										"type": "uint256"
+									},
+									{
+										"internalType": "uint256",
+										"name": "frozen",
+										"type": "uint256"
+									}
+								],
+								"internalType": "struct UseCnt",
+								"name": "useCnt",
+								"type": "tuple"
+							},
+							{
+								"components": [
+									{
+										"internalType": "uint256",
+										"name": "id",
+										"type": "uint256"
+									},
+									{
+										"internalType": "uint256",
+										"name": "startTime",
+										"type": "uint256"
+									},
+									{
+										"internalType": "uint256",
+										"name": "endTime",
+										"type": "uint256"
+									},
+									{
+										"internalType": "address",
+										"name": "occupier",
+										"type": "address"
+									},
+									{
+										"internalType": "enum OccupyType",
+										"name": "occupyType",
+										"type": "uint8"
+									}
+								],
+								"internalType": "struct OccupyPeriod[]",
+								"name": "occupyPeriod",
+								"type": "tuple[]"
+							}
+						],
+						"internalType": "struct Equipment[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "addr",
+						"type": "address"
+					}
+				],
+				"name": "getEquipmentRented",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "id",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "owner",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "createdTime",
+								"type": "uint256"
+							},
+							{
+								"internalType": "bool",
+								"name": "isFrozen",
+								"type": "bool"
+							},
+							{
+								"internalType": "string",
+								"name": "name",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "category",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "descLink",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "imagesLink",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "unitPrice",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "deposit",
+								"type": "uint256"
+							},
+							{
+								"components": [
+									{
+										"internalType": "uint256",
+										"name": "lent",
+										"type": "uint256"
+									},
+									{
+										"internalType": "uint256",
+										"name": "maintain",
+										"type": "uint256"
+									},
+									{
+										"internalType": "uint256",
+										"name": "frozen",
+										"type": "uint256"
+									}
+								],
+								"internalType": "struct UseCnt",
+								"name": "useCnt",
+								"type": "tuple"
+							},
+							{
+								"components": [
+									{
+										"internalType": "uint256",
+										"name": "id",
+										"type": "uint256"
+									},
+									{
+										"internalType": "uint256",
+										"name": "startTime",
+										"type": "uint256"
+									},
+									{
+										"internalType": "uint256",
+										"name": "endTime",
+										"type": "uint256"
+									},
+									{
+										"internalType": "address",
+										"name": "occupier",
+										"type": "address"
+									},
+									{
+										"internalType": "enum OccupyType",
+										"name": "occupyType",
+										"type": "uint8"
+									}
+								],
+								"internalType": "struct OccupyPeriod[]",
+								"name": "occupyPeriod",
+								"type": "tuple[]"
+							}
+						],
+						"internalType": "struct Equipment[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "leaseId",
+						"type": "uint256"
+					}
+				],
+				"name": "getLeasePact",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "id",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "equipmentId",
+								"type": "uint256"
+							},
+							{
+								"internalType": "string",
+								"name": "equipmentName",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "renterName",
+								"type": "string"
+							},
+							{
+								"internalType": "address",
+								"name": "owner",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "renter",
+								"type": "address"
+							},
+							{
+								"components": [
+									{
+										"internalType": "uint256",
+										"name": "unitPrice",
+										"type": "uint256"
+									},
+									{
+										"internalType": "uint256",
+										"name": "totalPrice",
+										"type": "uint256"
+									},
+									{
+										"internalType": "uint256",
+										"name": "deposit",
+										"type": "uint256"
+									},
+									{
+										"internalType": "bool",
+										"name": "isPaid",
+										"type": "bool"
+									}
+								],
+								"internalType": "struct Price",
+								"name": "price",
+								"type": "tuple"
+							},
+							{
+								"components": [
+									{
+										"internalType": "uint256",
+										"name": "startTime",
+										"type": "uint256"
+									},
+									{
+										"internalType": "uint256",
+										"name": "endTime",
+										"type": "uint256"
+									},
+									{
+										"internalType": "uint256",
+										"name": "userid",
+										"type": "uint256"
+									},
+									{
+										"internalType": "enum OccupyType",
+										"name": "occupyType",
+										"type": "uint8"
+									}
+								],
+								"internalType": "struct Period",
+								"name": "period",
+								"type": "tuple"
+							},
+							{
+								"components": [
+									{
+										"internalType": "uint256",
+										"name": "CREATED",
+										"type": "uint256"
+									},
+									{
+										"internalType": "uint256",
+										"name": "CANCELED",
+										"type": "uint256"
+									},
+									{
+										"internalType": "uint256",
+										"name": "APPROVED",
+										"type": "uint256"
+									},
+									{
+										"internalType": "uint256",
+										"name": "REJECTED",
+										"type": "uint256"
+									},
+									{
+										"internalType": "uint256",
+										"name": "RETURNED",
+										"type": "uint256"
+									},
+									{
+										"internalType": "uint256",
+										"name": "COMPLETED",
+										"type": "uint256"
+									}
+								],
+								"internalType": "struct StepsStatus",
+								"name": "steps",
+								"type": "tuple"
+							}
+						],
+						"internalType": "struct LeasePact",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getLeasePactAll",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "id",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "equipmentId",
+								"type": "uint256"
+							},
+							{
+								"internalType": "string",
+								"name": "equipmentName",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "renterName",
+								"type": "string"
+							},
+							{
+								"internalType": "address",
+								"name": "owner",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "renter",
+								"type": "address"
+							},
+							{
+								"components": [
+									{
+										"internalType": "uint256",
+										"name": "unitPrice",
+										"type": "uint256"
+									},
+									{
+										"internalType": "uint256",
+										"name": "totalPrice",
+										"type": "uint256"
+									},
+									{
+										"internalType": "uint256",
+										"name": "deposit",
+										"type": "uint256"
+									},
+									{
+										"internalType": "bool",
+										"name": "isPaid",
+										"type": "bool"
+									}
+								],
+								"internalType": "struct Price",
+								"name": "price",
+								"type": "tuple"
+							},
+							{
+								"components": [
+									{
+										"internalType": "uint256",
+										"name": "startTime",
+										"type": "uint256"
+									},
+									{
+										"internalType": "uint256",
+										"name": "endTime",
+										"type": "uint256"
+									},
+									{
+										"internalType": "uint256",
+										"name": "userid",
+										"type": "uint256"
+									},
+									{
+										"internalType": "enum OccupyType",
+										"name": "occupyType",
+										"type": "uint8"
+									}
+								],
+								"internalType": "struct Period",
+								"name": "period",
+								"type": "tuple"
+							},
+							{
+								"components": [
+									{
+										"internalType": "uint256",
+										"name": "CREATED",
+										"type": "uint256"
+									},
+									{
+										"internalType": "uint256",
+										"name": "CANCELED",
+										"type": "uint256"
+									},
+									{
+										"internalType": "uint256",
+										"name": "APPROVED",
+										"type": "uint256"
+									},
+									{
+										"internalType": "uint256",
+										"name": "REJECTED",
+										"type": "uint256"
+									},
+									{
+										"internalType": "uint256",
+										"name": "RETURNED",
+										"type": "uint256"
+									},
+									{
+										"internalType": "uint256",
+										"name": "COMPLETED",
+										"type": "uint256"
+									}
+								],
+								"internalType": "struct StepsStatus",
+								"name": "steps",
+								"type": "tuple"
+							}
+						],
+						"internalType": "struct LeasePact[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "addr",
+						"type": "address"
+					}
+				],
+				"name": "getLeasePactOwned",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "id",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "equipmentId",
+								"type": "uint256"
+							},
+							{
+								"internalType": "string",
+								"name": "equipmentName",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "renterName",
+								"type": "string"
+							},
+							{
+								"internalType": "address",
+								"name": "owner",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "renter",
+								"type": "address"
+							},
+							{
+								"components": [
+									{
+										"internalType": "uint256",
+										"name": "unitPrice",
+										"type": "uint256"
+									},
+									{
+										"internalType": "uint256",
+										"name": "totalPrice",
+										"type": "uint256"
+									},
+									{
+										"internalType": "uint256",
+										"name": "deposit",
+										"type": "uint256"
+									},
+									{
+										"internalType": "bool",
+										"name": "isPaid",
+										"type": "bool"
+									}
+								],
+								"internalType": "struct Price",
+								"name": "price",
+								"type": "tuple"
+							},
+							{
+								"components": [
+									{
+										"internalType": "uint256",
+										"name": "startTime",
+										"type": "uint256"
+									},
+									{
+										"internalType": "uint256",
+										"name": "endTime",
+										"type": "uint256"
+									},
+									{
+										"internalType": "uint256",
+										"name": "userid",
+										"type": "uint256"
+									},
+									{
+										"internalType": "enum OccupyType",
+										"name": "occupyType",
+										"type": "uint8"
+									}
+								],
+								"internalType": "struct Period",
+								"name": "period",
+								"type": "tuple"
+							},
+							{
+								"components": [
+									{
+										"internalType": "uint256",
+										"name": "CREATED",
+										"type": "uint256"
+									},
+									{
+										"internalType": "uint256",
+										"name": "CANCELED",
+										"type": "uint256"
+									},
+									{
+										"internalType": "uint256",
+										"name": "APPROVED",
+										"type": "uint256"
+									},
+									{
+										"internalType": "uint256",
+										"name": "REJECTED",
+										"type": "uint256"
+									},
+									{
+										"internalType": "uint256",
+										"name": "RETURNED",
+										"type": "uint256"
+									},
+									{
+										"internalType": "uint256",
+										"name": "COMPLETED",
+										"type": "uint256"
+									}
+								],
+								"internalType": "struct StepsStatus",
+								"name": "steps",
+								"type": "tuple"
+							}
+						],
+						"internalType": "struct LeasePact[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "addr",
+						"type": "address"
+					}
+				],
+				"name": "getLeasePactRented",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "id",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "equipmentId",
+								"type": "uint256"
+							},
+							{
+								"internalType": "string",
+								"name": "equipmentName",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "renterName",
+								"type": "string"
+							},
+							{
+								"internalType": "address",
+								"name": "owner",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "renter",
+								"type": "address"
+							},
+							{
+								"components": [
+									{
+										"internalType": "uint256",
+										"name": "unitPrice",
+										"type": "uint256"
+									},
+									{
+										"internalType": "uint256",
+										"name": "totalPrice",
+										"type": "uint256"
+									},
+									{
+										"internalType": "uint256",
+										"name": "deposit",
+										"type": "uint256"
+									},
+									{
+										"internalType": "bool",
+										"name": "isPaid",
+										"type": "bool"
+									}
+								],
+								"internalType": "struct Price",
+								"name": "price",
+								"type": "tuple"
+							},
+							{
+								"components": [
+									{
+										"internalType": "uint256",
+										"name": "startTime",
+										"type": "uint256"
+									},
+									{
+										"internalType": "uint256",
+										"name": "endTime",
+										"type": "uint256"
+									},
+									{
+										"internalType": "uint256",
+										"name": "userid",
+										"type": "uint256"
+									},
+									{
+										"internalType": "enum OccupyType",
+										"name": "occupyType",
+										"type": "uint8"
+									}
+								],
+								"internalType": "struct Period",
+								"name": "period",
+								"type": "tuple"
+							},
+							{
+								"components": [
+									{
+										"internalType": "uint256",
+										"name": "CREATED",
+										"type": "uint256"
+									},
+									{
+										"internalType": "uint256",
+										"name": "CANCELED",
+										"type": "uint256"
+									},
+									{
+										"internalType": "uint256",
+										"name": "APPROVED",
+										"type": "uint256"
+									},
+									{
+										"internalType": "uint256",
+										"name": "REJECTED",
+										"type": "uint256"
+									},
+									{
+										"internalType": "uint256",
+										"name": "RETURNED",
+										"type": "uint256"
+									},
+									{
+										"internalType": "uint256",
+										"name": "COMPLETED",
+										"type": "uint256"
+									}
+								],
+								"internalType": "struct StepsStatus",
+								"name": "steps",
+								"type": "tuple"
+							}
+						],
+						"internalType": "struct LeasePact[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "addrs",
+						"type": "address"
+					}
+				],
+				"name": "getUser",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "id",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "addres",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "createTime",
+								"type": "uint256"
+							},
+							{
+								"internalType": "string",
+								"name": "name",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "avatar",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "email",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "tellphone",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "organization",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "rating",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256[]",
+								"name": "permission",
+								"type": "uint256[]"
+							}
+						],
+						"internalType": "struct User",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getUserAll",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "id",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "addres",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "createTime",
+								"type": "uint256"
+							},
+							{
+								"internalType": "string",
+								"name": "name",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "avatar",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "email",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "tellphone",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "organization",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "rating",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256[]",
+								"name": "permission",
+								"type": "uint256[]"
+							}
+						],
+						"internalType": "struct User[]",
+						"name": "_users",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "startIndex",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "length",
+						"type": "uint256"
+					}
+				],
+				"name": "getUserBatch",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "id",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "addres",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "createTime",
+								"type": "uint256"
+							},
+							{
+								"internalType": "string",
+								"name": "name",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "avatar",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "email",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "tellphone",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "organization",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "rating",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256[]",
+								"name": "permission",
+								"type": "uint256[]"
+							}
+						],
+						"internalType": "struct User[]",
+						"name": "_users",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "usrid",
+						"type": "uint256"
+					}
+				],
+				"name": "getUserByID",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "id",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "addres",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "createTime",
+								"type": "uint256"
+							},
+							{
+								"internalType": "string",
+								"name": "name",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "avatar",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "email",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "tellphone",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "organization",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "rating",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256[]",
+								"name": "permission",
+								"type": "uint256[]"
+							}
+						],
+						"internalType": "struct User",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "haveGotEth",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "equipmentId",
+						"type": "uint256"
+					}
+				],
+				"name": "maintainEquipment",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "equipmentId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "startTime",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "endTime",
+						"type": "uint256"
+					}
+				],
+				"name": "maintainEquipment",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "addrs",
+						"type": "address"
+					}
+				],
+				"name": "removeAdmin",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "equipmentId",
+						"type": "uint256"
+					}
+				],
+				"name": "removeEquipment",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "equipmentId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "startTime",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "endTime",
+						"type": "uint256"
+					}
+				],
+				"name": "requireEquipAvailable",
+				"outputs": [
+					{
+						"internalType": "int256",
+						"name": "",
+						"type": "int256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "leaseId",
+						"type": "uint256"
+					}
+				],
+				"name": "reserveApprove",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "leaseId",
+						"type": "uint256"
+					}
+				],
+				"name": "reserveCancel",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "leaseId",
+						"type": "uint256"
+					}
+				],
+				"name": "reserveComplete",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "equipmentId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "startTime",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "endTime",
+						"type": "uint256"
+					}
+				],
+				"name": "reserveEquipment",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "leaseId",
+						"type": "uint256"
+					}
+				],
+				"name": "reservePopose",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "leaseId",
+						"type": "uint256"
+					}
+				],
+				"name": "reserveReject",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "token",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "symbol",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "decimals",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "totalSupply",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "transfer",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "equipmentId",
+						"type": "uint256"
+					}
+				],
+				"name": "unfreezeEquipment",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "equipmentId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "category",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "descLink",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "imagesLink",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "deposit",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "unitPrice",
+						"type": "uint256"
+					}
+				],
+				"name": "updateEquipment",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "avatar",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "email",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "tellphone",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "organization",
+						"type": "string"
+					}
+				],
+				"name": "updateUser",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "addrs",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "avatar",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "email",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "tellphone",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "organization",
+						"type": "string"
+					}
+				],
+				"name": "updateUser",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"truffle/contracts/main.sol": "EquipShare"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"truffle/contracts/authority.sol": {
+			"keccak256": "0xe86ed0e378c6bd2a2cf0b49fd8a414d11c75f9831823f3223fbfc4cebdaa4b87",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://c5caad5a35cc195f4c9a904066a30370a0344e55f3fc29994739bba29932ed75",
+				"dweb:/ipfs/QmPCWi73p1xVzqSzLdupZrrZrLDXwxwQVTxPUmtkBEySxC"
+			]
+		},
+		"truffle/contracts/equipment.sol": {
+			"keccak256": "0x9a7bc1b2a211485f04b4df8156ac7473cb3c2e5d25bcdefb5e92304dbef6c1c1",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://98228153321d748f53315d644824ad41f73480ad8ebccfd281852771c9f51c3e",
+				"dweb:/ipfs/QmSEkGwPvt79h8rc8Er911sw7cH1s8V5yRaymRSmR222bE"
+			]
+		},
+		"truffle/contracts/lease.sol": {
+			"keccak256": "0x30bc668a7a3d5b74ca69b11a2321012c4ec9c6a9e9549bfe7196c23d9ddd0a6c",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://b06a70222b38d80bfe942204f013f96338949ae83b18734dbd4a748d6176abbb",
+				"dweb:/ipfs/QmS1ibBL5QLhvwW7P5tQjwU1KtZZZJpX8Fq4cuuhc7cSt5"
+			]
+		},
+		"truffle/contracts/library.sol": {
+			"keccak256": "0xf9ab8ba06bc0cf333c702d3fc5cfa384b1a96bb5b13eef482638e0775012205b",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://327c08ae79d14241dc770057102ec09ee5fa725d88f2c88dbb99e10329b15551",
+				"dweb:/ipfs/QmdKc6YTHsWdhFt9XwtsuueFY1KBhrEwakTyeVWbH77ucZ"
+			]
+		},
+		"truffle/contracts/main.sol": {
+			"keccak256": "0x0eb9a1c0e1418b59ab06951eefad6db3e810ce5393f64635b85ce62cbeae0066",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://477773378e8790e6adf15f18dd8222fcf1bea577ee5b5db3f4e65c813515057f",
+				"dweb:/ipfs/QmR1MzrT2kWMEELBXohkYrXsymjrKh5ZvQenEQh6UPLgWT"
+			]
+		},
+		"truffle/contracts/token.sol": {
+			"keccak256": "0x83ff0161be923f69b4aee1ffd71f9c5ec5fe07b68b20ff19aed2baa31c6c7dbc",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://6f113dae358a98863bc50f00cc1a8f3712321c5a865328bad463c52f2381058b",
+				"dweb:/ipfs/QmQLxqa1oMur423bJQUWudLLFbMkVuM3CSJxjJ1naqoKRu"
+			]
+		},
+		"truffle/contracts/user.sol": {
+			"keccak256": "0xc57039e782d44a4da1997416c68f1762fd2a4431ecdf53fc1a9a15ea756c1a44",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://6306291ce8acc4943f5e3048488e09cf00b39ca887d0c35f8bf7e945c3d43e18",
+				"dweb:/ipfs/QmVRij59tuydxdz5Q154Twm46ZjYejqyyw2r1mBvGLYT6K"
+			]
+		}
+	},
+	"version": 1
+}
